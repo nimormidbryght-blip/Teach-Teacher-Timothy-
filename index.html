@@ -121,3 +121,14 @@ function rejectTeacher(btn){
 }
 
 </script></body></html>
+<!-- TTT Supabase connection -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const TTT_SUPABASE_URL = "https://dxdphtshahnwbggxzhpu.supabase.co";
+  const TTT_SUPABASE_KEY = "sb_publishable_1WWYZGc-x8Vv7YPA9l3WQw_B7XYIgyI";
+
+  const tttSupabase = window.supabase.createClient(
+    TTT_SUPABASE_URL,
+    TTT_SUPABASE_KEY
+  );
+</script>
