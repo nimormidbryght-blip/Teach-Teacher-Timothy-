@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Teach Teacher Timothy connects learners and parents in Ghana with qualified tutors for online and in-person lessons.">
+<title>Teach Teacher Timothy | Find the right teacher</title>
+<style>
+:root{--green:#123d30;--green2:#1d5945;--gold:#e5bd59;--cream:#f7f8f3;--ink:#18231e;--muted:#64736b;--line:#e3e9e3}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}.brand{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--green)}.mark{background:var(--gold);border-radius:12px;padding:9px 10px;font-weight:900}.navlinks{display:flex;gap:22px;color:#46564e;font-size:14px}.btn{border:0;border-radius:9px;padding:12px 18px;font-weight:750;cursor:pointer;display:inline-block}.primary{background:var(--gold);color:#19382c}.secondary{background:#fff;color:var(--green);border:1px solid #cbd8cf}.hero{background:var(--green);color:white;padding:76px 0 66px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:.12em;font-size:12px}.hero h1{font-size:clamp(38px,6vw,62px);line-height:1.08;margin:13px 0 18px;max-width:690px}.hero p{color:#dce8e0;max-width:590px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.hero .secondary{background:transparent;color:white;border-color:#789587}.hero-card{background:#fff;color:var(--ink);border-radius:18px;padding:24px;box-shadow:0 18px 50px #071c1438}.hero-card h3{margin-top:0}.choice{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.choice:last-child{border:0}.choice b{display:block}.choice small{color:var(--muted)}section{padding:60px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 30px}.section-head h2{font-size:32px;margin:8px 0}.muted{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:15px;padding:22px;background:white}.card .ico{font-size:27px}.soft{background:var(--cream)}.searchbar{display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:10px;background:#fff;padding:14px;border:1px solid var(--line);border-radius:14px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}.field label{font-size:13px;font-weight:700}.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #ccd7cf;border-radius:8px;font:inherit;background:white}.field textarea{min-height:90px;resize:vertical}.tutor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:22px}.tutor{border:1px solid var(--line);border-radius:13px;padding:18px}.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#e8f0e9;color:var(--green);font-weight:900;float:right}.tag{display:inline-block;background:#edf4ef;color:var(--green);border-radius:20px;padding:4px 9px;font-size:12px;margin:3px 3px 3px 0}.forms{display:grid;grid-template-columns:1fr 1fr;gap:22px}.form-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:24px}.form-card h3{margin-top:0;color:var(--green)}.note{font-size:12px;color:var(--muted)}.status{margin-top:12px;padding:10px;border-radius:8px;background:#edf5ee;color:#174b36;display:none}.commission-box{background:#fff8df;border:1px solid #ead59a;border-radius:15px;padding:24px;margin:24px auto;max-width:760px}.commission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:15px}.commission-stat{background:white;border:1px solid #eadfb9;border-radius:10px;padding:14px}.commission-stat b{display:block;font-size:20px;color:var(--green)}.checkline{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:13px;color:var(--muted)}@media(max-width:760px){.commission-grid{grid-template-columns:1fr}}.footer{background:#102f25;color:#dce8e0;padding:35px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.hidden{display:none!important}@media(max-width:760px){.navlinks{display:none}.hero-grid,.forms{grid-template-columns:1fr}.cards,.tutor-grid{grid-template-columns:1fr}.searchbar{grid-template-columns:1fr 1fr}.searchbar button{grid-column:1/-1}.hero{padding:52px 0}}
+
+.admin-panel{background:#102f25;color:white;padding:60px 0}
+.admin-login{max-width:520px;margin:0 auto;background:white;color:var(--ink);border-radius:16px;padding:24px}
+.admin-dashboard{display:none;margin-top:24px}
+.admin-dashboard.active{display:block}
+.admin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}
+.admin-stat{background:white;color:var(--ink);border-radius:12px;padding:18px}
+.admin-stat small{color:var(--muted)}
+.admin-stat b{display:block;font-size:26px;color:var(--green);margin-top:5px}
+.admin-card{background:white;color:var(--ink);border-radius:14px;padding:20px;margin-top:16px}
+.admin-table{width:100%;border-collapse:collapse;font-size:14px}
+.admin-table th,.admin-table td{padding:10px;border-bottom:1px solid var(--line);text-align:left}
+.badge{display:inline-block;padding:4px 9px;border-radius:20px;font-size:12px;font-weight:700;background:#fff3cd;color:#765d00}
+.approve{background:#e8f3eb;color:#185c39}
+.reject{background:#f8e8e8;color:#8b2929}
+.admin-actions{display:flex;gap:8px;flex-wrap:wrap}
+.smallbtn{padding:8px 10px;border-radius:8px;border:1px solid #ccd7cf;background:white;cursor:pointer;font-weight:700}
+@media(max-width:760px){.admin-grid{grid-template-columns:1fr 1fr}.admin-table{font-size:12px}.admin-card{overflow-x:auto}}
+
+</style></head>
+<body>
+<header class="wrap nav"><a class="brand" href="#home"><span class="mark">TTT</span><span>Teach Teacher Timothy</span></a><nav class="navlinks"><a href="#how">How it works</a><a href="#tutors">Find a tutor</a><a href="#register">Become a tutor</a><a href="#admin">Admin</a></nav><a class="btn secondary" href="#request">Request a lesson</a></header>
+<main id="home"><section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">GHANA'S LEARNING CONNECTION</div><h1>Find the right teacher. Learn your way.</h1><p>Discover tutors for the subjects and skills you want to master. Choose online lessons or in-person teaching that fits your needs.</p><div class="hero-actions"><a class="btn primary" href="#tutors">Explore teachers →</a><a class="btn secondary" href="#register">Join as a teacher</a></div></div><div class="hero-card"><h3>Your learning. Your choice.</h3><div class="choice"><span>💻</span><div><b>Online lessons</b><small>Learn from wherever you are.</small></div></div><div class="choice"><span>🏡</span><div><b>In-person lessons</b><small>Meet your tutor at an agreed location.</small></div></div><div class="choice"><span>🎯</span><div><b>Personalised support</b><small>Find help suited to your learning goals.</small></div></div></div></div></section>
+<section id="how"><div class="wrap"><div class="section-head"><div class="eyebrow">SIMPLE TO GET STARTED</div><h2>How TTT works</h2><p class="muted">A straightforward way for learners and qualified teachers to connect.</p></div><div class="cards"><article class="card"><div class="ico">🔎</div><h3>1. Explore teachers</h3><p class="muted">Browse tutor profiles by subject, level and lesson mode.</p></article><article class="card"><div class="ico">📝</div><h3>2. Share your needs</h3><p class="muted">Tell us what you want to learn and when you are available.</p></article><article class="card"><div class="ico">🤝</div><h3>3. Connect and learn</h3><p class="muted">TTT helps you connect with a tutor who fits your requirements.</p></article></div></div></section>
+<section class="soft" id="tutors"><div class="wrap"><div class="section-head"><div class="eyebrow">DISCOVER YOUR NEXT TUTOR</div><h2>Find a teacher</h2><p class="muted">Search the sample directory. Tutor listings shown here are demonstration profiles, not verified registrations.</p></div><div class="searchbar"><input id="subjectSearch" aria-label="Subject" placeholder="Subject e.g. Mathematics"><select id="levelSearch" aria-label="Education level"><option value="">Any level</option><option>Primary</option><option>JHS</option><option>SHS</option><option>University</option><option>Adult learning</option></select><select id="modeSearch" aria-label="Lesson mode"><option value="">Any mode</option><option>Online</option><option>In-person</option><option>Both</option></select><button class="btn primary" onclick="filterTutors()">Search</button></div><div class="tutor-grid" id="tutorGrid"><article class="tutor" data-subject="mathematics core mathematics" data-level="jhs shs" data-mode="online both"><span class="avatar">AT</span><b>Sample Tutor A</b><p class="muted">Mathematics · JHS & SHS</p><span class="tag">Online</span><span class="tag">Both</span><p class="note">Demonstration listing — profile pending verification.</p></article><article class="tutor" data-subject="english language literacy" data-level="primary jhs" data-mode="in-person both"><span class="avatar">BT</span><b>Sample Tutor B</b><p class="muted">English Language · Primary & JHS</p><span class="tag">In-person</span><span class="tag">Both</span><p class="note">Demonstration listing — profile pending verification.</p></article><article class="tutor" data-subject="science integrated science biology" data-level="jhs shs" data-mode="online"><span class="avatar">CT</span><b>Sample Tutor C</b><p class="muted">Science · JHS & SHS</p><span class="tag">Online</span><p class="note">Demonstration listing — profile pending verification.</p></article></div><p id="noResults" class="muted hidden">No sample tutors match those filters yet. Submit a request and TTT can help identify a suitable tutor.</p></div></section>
+<section id="commission"><div class="wrap"><div class="section-head"><div class="eyebrow">TTT COMMISSION MODEL</div><h2>Clear and transparent teacher earnings</h2><p class="muted">TTT deducts a 15% platform commission from the teacher's agreed tutoring fee. The teacher receives the remaining 85%.</p></div><div class="commission-box"><div class="field"><label>Enter an agreed tutoring fee (GH₵)</label><input id="feeInput" type="number" min="0" step="0.01" placeholder="e.g. 500" oninput="calculateCommission()"></div><div class="commission-grid"><div class="commission-stat"><small>Agreed tutoring fee</small><b id="grossFee">GH₵0.00</b></div><div class="commission-stat"><small>TTT commission (15%)</small><b id="commissionFee">GH₵0.00</b></div><div class="commission-stat"><small>Teacher receives (85%)</small><b id="teacherEarnings">GH₵0.00</b></div></div><p class="note">This calculator demonstrates the TTT commission rule. Actual payment processing, refunds and payouts will require a secure backend and payment integration.</p></div></div></section><section id="request"><div class="wrap"><div class="section-head"><div class="eyebrow">FOR STUDENTS & PARENTS</div><h2>Request tutoring support</h2><p class="muted">Tell us what you need. The form below is a front-end demonstration; submissions are not yet sent to a live database.</p></div><div class="forms"><form class="form-card" onsubmit="demoSubmit(event,'requestStatus')"><h3>Student / parent application</h3><div class="field"><label>Parent or student name *</label><input required name="name" placeholder="Your full name"></div><div class="field"><label>Email address *</label><input required type="email" name="email" placeholder="you@example.com"></div><div class="field"><label>Phone / WhatsApp *</label><input required name="phone" placeholder="e.g. 024 000 0000"></div><div class="field"><label>Subject needed *</label><input required name="subject" placeholder="e.g. Core Mathematics"></div><div class="field"><label>Education level *</label><select required name="level"><option value="">Choose level</option><option>Primary</option><option>JHS</option><option>SHS</option><option>University</option><option>Adult learning</option></select></div><div class="field"><label>Preferred lesson mode *</label><select required name="mode"><option value="">Choose mode</option><option>Online</option><option>In-person</option><option>Either</option></select></div><div class="field"><label>Location (town / region)</label><input name="location" placeholder="e.g. Adenta, Greater Accra"></div><div class="field"><label>Learning goals or support needed</label><textarea name="needs" placeholder="Tell us about the learner's goals, topics or specific support needed."></textarea></div><button class="btn primary" type="submit">Submit demo request</button><div class="status" id="requestStatus" role="status"></div></form>
+<form class="form-card" id="register" onsubmit="demoSubmit(event,'teacherStatus')"><h3>Register as a teacher</h3><div class="field"><label>Full name *</label><input required name="name" placeholder="Your full name"></div><div class="field"><label>Email address *</label><input required type="email" name="email" placeholder="you@example.com"></div><div class="field"><label>Phone / WhatsApp *</label><input required name="phone" placeholder="Your contact number"></div><div class="field"><label>Highest qualification *</label><input required name="qualification" placeholder="e.g. B.Ed. Mathematics"></div><div class="field"><label>Subjects you teach *</label><input required name="subjects" placeholder="Separate subjects with commas"></div><div class="field"><label>Levels you teach *</label><select required name="level"><option value="">Choose level</option><option>Primary</option><option>JHS</option><option>SHS</option><option>University</option><option>Adult learning</option><option>Multiple levels</option></select></div><div class="field"><label>Teaching mode *</label><select required name="mode"><option value="">Choose mode</option><option>Online</option><option>In-person</option><option>Both</option></select></div><div class="field"><label>Location (town / region)</label><input name="location" placeholder="Where can you teach in person?"></div><div class="field"><label>Teaching experience</label><textarea name="experience" placeholder="Briefly describe your experience and strengths."></textarea></div><label class="checkline"><input required type="checkbox" name="commissionAgreement"> <span>I understand that TTT deducts a <b>15% commission</b> from the agreed tutoring fee, leaving the teacher with <b>85%</b>, subject to the final TTT terms and payment arrangement.</span></label><button class="btn primary" type="submit">Submit demo registration</button><div class="status" id="teacherStatus" role="status"></div></form></div><p class="note">Safeguarding: TTT should verify tutor identity and qualifications before publishing profiles. For learners under 18, parent/guardian involvement and appropriate child-safety procedures are essential. Do not submit sensitive identity documents through this demo.</p></div></section>
+
+<section class="admin-panel" id="admin">
+<div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">TTT MANAGEMENT AREA</div>
+    <h2>Administrator Dashboard</h2>
+    <p style="color:#dce8e0">Manage teachers, tutoring requests and TTT commission records.</p>
+  </div>
+
+  <div class="admin-login" id="adminLogin">
+    <h3>Administrator access</h3>
+    <p class="muted">Demo access for the first TTT prototype.</p>
+    <div class="field"><label>Administrator name</label><input id="adminName" placeholder="Enter your name"></div>
+    <button class="btn primary" onclick="openDashboard()">Open demo dashboard</button>
+    <p class="note">This is not secure authentication yet. Real login protection will be added when we connect a backend.</p>
+  </div>
+
+  <div class="admin-dashboard" id="adminDashboard">
+    <div class="admin-grid">
+      <div class="admin-stat"><small>Pending teachers</small><b id="pendingCount">2</b></div>
+      <div class="admin-stat"><small>Approved teachers</small><b id="approvedCount">1</b></div>
+      <div class="admin-stat"><small>Tutoring requests</small><b>3</b></div>
+      <div class="admin-stat"><small>TTT commission rate</small><b>15%</b></div>
+    </div>
+
+    <div class="admin-card">
+      <h3>Teacher applications</h3>
+      <table class="admin-table">
+        <thead><tr><th>Teacher</th><th>Subject</th><th>Level</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody id="teacherApplications">
+          <tr data-status="pending"><td>Sample Tutor A</td><td>Mathematics</td><td>JHS & SHS</td><td><span class="badge">Pending</span></td><td class="admin-actions"><button class="smallbtn" onclick="approveTeacher(this)">Approve</button><button class="smallbtn" onclick="rejectTeacher(this)">Reject</button></td></tr>
+          <tr data-status="pending"><td>Sample Tutor B</td><td>English Language</td><td>Primary & JHS</td><td><span class="badge">Pending</span></td><td class="admin-actions"><button class="smallbtn" onclick="approveTeacher(this)">Approve</button><button class="smallbtn" onclick="rejectTeacher(this)">Reject</button></td></tr>
+          <tr data-status="approved"><td>Sample Tutor C</td><td>Science</td><td>JHS & SHS</td><td><span class="badge approve">Approved</span></td><td>Verified</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="admin-card">
+      <h3>Tutoring request pipeline</h3>
+      <p><b>1.</b> Receive parent/student request → <b>2.</b> Review needs → <b>3.</b> Match teacher → <b>4.</b> Confirm tutoring arrangement → <b>5.</b> Record payment and commission.</p>
+    </div>
+
+    <div class="admin-card">
+      <h3>Commission example</h3>
+      <p>For a GH₵500 agreed tutoring fee:</p>
+      <p><b>TTT commission (15%):</b> GH₵75 &nbsp; | &nbsp; <b>Teacher earnings (85%):</b> GH₵425</p>
+    </div>
+  </div>
+</div>
+</section>
+</main><footer class="footer"><div class="wrap footer-row"><div><b>Teach Teacher Timothy (TTT)</b><br><span class="note">Connecting learners with the right teachers.</span></div><div class="note">Ghana first · Built to grow · © <span id="year"></span> TTT</div></div></footer>
+<script>
+function filterTutors(){const s=document.getElementById('subjectSearch').value.toLowerCase().trim(),l=document.getElementById('levelSearch').value.toLowerCase(),m=document.getElementById('modeSearch').value.toLowerCase();let shown=0;document.querySelectorAll('.tutor').forEach(t=>{const ok=(!s||t.dataset.subject.includes(s))&&(!l||t.dataset.level.includes(l))&&(!m||t.dataset.mode.includes(m));t.classList.toggle('hidden',!ok);if(ok)shown++});document.getElementById('noResults').classList.toggle('hidden',shown>0)}
+const TTT_COMMISSION_RATE=0.15;
+function money(value){return 'GH₵'+Number(value||0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+function calculateCommission(){const fee=Math.max(0,Number(document.getElementById('feeInput').value)||0),commission=fee*TTT_COMMISSION_RATE,teacher=fee-commission;document.getElementById('grossFee').textContent=money(fee);document.getElementById('commissionFee').textContent=money(commission);document.getElementById('teacherEarnings').textContent=money(teacher)}
+function demoSubmit(e,id){e.preventDefault();const box=document.getElementById(id);box.style.display='block';box.textContent=id==='teacherStatus'?'Thank you. Your demonstration registration includes the TTT 15% commission acknowledgement. This page is not yet connected to a secure server, so no registration has been transmitted or stored.':'Thank you. This demonstration form works on this page, but it is not connected to a secure server yet. No application has been transmitted or stored.';e.target.reset()}
+document.getElementById('year').textContent=new Date().getFullYear();
+
+function openDashboard(){
+  const name=document.getElementById('adminName').value.trim();
+  if(!name){alert('Please enter your administrator name for this demo.');return;}
+  document.getElementById('adminLogin').style.display='none';
+  document.getElementById('adminDashboard').classList.add('active');
+}
+function refreshTeacherCounts(){
+  const rows=[...document.querySelectorAll('#teacherApplications tr')];
+  const pending=rows.filter(r=>r.dataset.status==='pending').length;
+  const approved=rows.filter(r=>r.dataset.status==='approved').length;
+  document.getElementById('pendingCount').textContent=pending;
+  document.getElementById('approvedCount').textContent=approved;
+}
+function approveTeacher(btn){
+  const row=btn.closest('tr');
+  row.dataset.status='approved';
+  row.children[3].innerHTML='<span class="badge approve">Approved</span>';
+  row.children[4].textContent='Verified';
+  refreshTeacherCounts();
+}
+function rejectTeacher(btn){
+  const row=btn.closest('tr');
+  row.dataset.status='rejected';
+  row.children[3].innerHTML='<span class="badge reject">Rejected</span>';
+  row.children[4].textContent='Rejected';
+  refreshTeacherCounts();
+}
+
+</script></body></html>
