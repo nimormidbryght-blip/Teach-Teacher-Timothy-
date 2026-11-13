@@ -130,6 +130,18 @@ const tttSupabase = window.supabase.createClient(
   TTT_SUPABASE_URL,
   TTT_SUPABASE_KEY
 );
+  (async function () {
+  const { error } = await tttSupabase
+    .from('teacher_profiles')
+    .select('id')
+    .limit(1);
+
+  if (error) {
+    alert('Connection test failed: ' + error.message);
+  } else {
+    alert('TTT Supabase connection successful!');
+  }
+})();
 </script>
 </body>
 </html>
