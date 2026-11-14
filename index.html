@@ -179,7 +179,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 function openDashboard(){
   const name=document.getElementById('adminName').value.trim();
   if(!name){alert('Please enter your administrator name for this demo.');return;}
-  document.getElementById('adminLogin').style.display='none';
+  document.getElementById('adminLogin').statusBox.style.display = 'block';
   document.getElementById('adminDashboard').classList.add('active');
 }
 function refreshTeacherCounts(){
