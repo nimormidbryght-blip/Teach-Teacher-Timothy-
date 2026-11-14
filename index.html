@@ -125,10 +125,25 @@ function demoSubmit(e,id){e.preventDefault();const box=document.getElementById(i
   const availability = form.availability.value.trim();
 
   const { data: authData, error: authError } =
-    await tttSupabase.auth.signUp({
-      email: email,
-      password: password
-    });
+  await tttSupabase.auth.signUp({
+    email: email,
+    password: password,
+    options: {
+      data: {
+        account_type: 'teacher',
+        name: name,
+        phone: phone,
+        qualification: qualification,
+        experience: experience,
+        subjects: subjects,
+        teaching_levels: [level],
+        location: location,
+        hourly_rate: hourlyRate,
+        availability: availability,
+        teaching_mode: mode
+      }
+    }
+  });
 
   if (authError) {
     statusBox.textContent = 'Registration error: ' + authError.message;
@@ -182,8 +197,8 @@ function demoSubmit(e,id){e.preventDefault();const box=document.getElementById(i
     return;
   }
 
-  statusBox.textContent =
-    'Registration successful! Please check your email to confirm your account. Your teacher profile is pending approval.';
+  .textContent =
+    'Registration successful! Please statusBoxcheck your email to confirm your account. Your teacher profile is pending approval.';
 
   form.reset();
   }
