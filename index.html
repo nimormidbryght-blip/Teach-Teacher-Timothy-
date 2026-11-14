@@ -106,23 +106,23 @@ function demoSubmit(e,id){e.preventDefault();const box=document.getElementById(i
   statusBox.style.display = 'block';
   statusBox.textContent = 'Creating your teacher account...';
 
-  const name = form.name.value.trim();
-  const email = form.email.value.trim();
-  const password = form.password.value;
-  const phone = form.phone.value.trim();
+  const name = form.elements.namedItem('name').value.trim();
+  const email = form.elements.namedItem('email').value.trim();
+  const password = form.elements.namedItem('password').value;
+  const phone = form.elements.namedItem('phone').value.trim();
 
-  const qualification = form.qualification.value.trim();
-  const subjects = form.subjects.value
+  const qualification = form.elements.namedItem('qualification').value.trim();
+  const subjects = form.elements.namedItem('subjects').value
     .split(',')
     .map(subject => subject.trim())
     .filter(Boolean);
 
-  const level = form.level.value;
-  const mode = form.mode.value;
-  const location = form.location.value.trim();
-  const experience = form.experience.value.trim();
-  const hourlyRate = Number(form.hourly_rate.value);
-  const availability = form.availability.value.trim();
+  const level = form.elements.namedItem('level').value;
+  const mode = form.elements.namedItem('mode').value;
+  const location = form.elements.namedItem('location').value.trim();
+  const experience = form.elements.namedItem('experience').value.trim();
+  const hourlyRate = Number(form.elements.namedItem('hourly_rate').value);
+  const availability = form.elements.namedItem('availability').value.trim();
 
   const { data: authData, error: authError } =
   await tttSupabase.auth.signUp({
@@ -160,45 +160,14 @@ function demoSubmit(e,id){e.preventDefault();const box=document.getElementById(i
 
   statusBox.textContent = 'Saving your teacher profile...';
 
-  const { error: profileError } = await tttSupabase
-    .from('profiles')
-    .insert({
-      id: user.id,
-      role: 'teacher'
-    });
-
-  if (profileError) {
-    statusBox.textContent =
-      'Account created, but profile setup failed: ' +
-      profileError.message;
-    return;
+  
   }
 
-  const { error: teacherError } = await tttSupabase
-    .from('teacher_profiles')
-    .insert({
-      user_id: user.id,
-      qualifications: qualification,
-      experience: experience || null,
-      subjects: subjects,
-      teaching_levels: [level],
-      location: location || null,
-      hourly_rate: hourlyRate,
-      availability: availability || null,
-      email: email,
-      phone: phone,
-      teaching_mode: mode
-    });
-
-  if (teacherError) {
-    statusBox.textContent =
-      'Account created, but teacher profile failed: ' +
-      teacherError.message;
-    return;
+  
   }
 
-  .textContent =
-    'Registration successful! Please statusBoxcheck your email to confirm your account. Your teacher profile is pending approval.';
+  statusBox.textContent =
+  'Registration successful! Please check your email to confirm your account. Your teacher profile is pending approval.';
 
   form.reset();
   }
