@@ -97,6 +97,96 @@ const TTT_COMMISSION_RATE=0.15;
 function money(value){return 'GH₵'+Number(value||0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
 function calculateCommission(){const fee=Math.max(0,Number(document.getElementById('feeInput').value)||0),commission=fee*TTT_COMMISSION_RATE,teacher=fee-commission;document.getElementById('grossFee').textContent=money(fee);document.getElementById('commissionFee').textContent=money(commission);document.getElementById('teacherEarnings').textContent=money(teacher)}
 function demoSubmit(e,id){e.preventDefault();const box=document.getElementById(id);box.style.display='block';box.textContent=id==='teacherStatus'?'Thank you. Your demonstration registration includes the TTT 15% commission acknowledgement. This page is not yet connected to a secure server, so no registration has been transmitted or stored.':'Thank you. This demonstration form works on this page, but it is not connected to a secure server yet. No application has been transmitted or stored.';e.target.reset()}
+  async function registerTeacher(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const statusBox = document.getElementById('teacherStatus');
+
+  statusBox.style.display = 'block';
+  statusBox.textContent = 'Creating your teacher account...';
+
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const password = form.password.value;
+  const phone = form.phone.value.trim();
+
+  const qualification = form.qualification.value.trim();
+  const subjects = form.subjects.value
+    .split(',')
+    .map(subject => subject.trim())
+    .filter(Boolean);
+
+  const level = form.level.value;
+  const mode = form.mode.value;
+  const location = form.location.value.trim();
+  const experience = form.experience.value.trim();
+  const hourlyRate = Number(form.hourly_rate.value);
+  const availability = form.availability.value.trim();
+
+  const { data: authData, error: authError } =
+    await tttSupabase.auth.signUp({
+      email: email,
+      password: password
+    });
+
+  if (authError) {
+    statusBox.textContent = 'Registration error: ' + authError.message;
+    return;
+  }
+
+  const user = authData.user;
+
+  if (!user) {
+    statusBox.textContent =
+      'Account could not be created. Please try again.';
+    return;
+  }
+
+  statusBox.textContent = 'Saving your teacher profile...';
+
+  const { error: profileError } = await tttSupabase
+    .from('profiles')
+    .insert({
+      id: user.id,
+      role: 'teacher'
+    });
+
+  if (profileError) {
+    statusBox.textContent =
+      'Account created, but profile setup failed: ' +
+      profileError.message;
+    return;
+  }
+
+  const { error: teacherError } = await tttSupabase
+    .from('teacher_profiles')
+    .insert({
+      user_id: user.id,
+      qualifications: qualification,
+      experience: experience || null,
+      subjects: subjects,
+      teaching_levels: [level],
+      location: location || null,
+      hourly_rate: hourlyRate,
+      availability: availability || null,
+      email: email,
+      phone: phone,
+      teaching_mode: mode
+    });
+
+  if (teacherError) {
+    statusBox.textContent =
+      'Account created, but teacher profile failed: ' +
+      teacherError.message;
+    return;
+  }
+
+  statusBox.textContent =
+    'Registration successful! Please check your email to confirm your account. Your teacher profile is pending approval.';
+
+  form.reset();
+  }
 document.getElementById('year').textContent=new Date().getFullYear();
 
 function openDashboard(){
